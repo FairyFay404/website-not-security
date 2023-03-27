@@ -10,15 +10,19 @@ export default function Login() {
                     </div>
                     <div>
                         <p className="text-username set-margin-left">Username</p>
-                        <input className="input-username set-margin-left" type="text" placeholder="username" />
+                        <div className='flex flex-row justify-center items-center '>
+                            <input className="input-username " type="text" placeholder="username" />
+                        </div>
                     </div>
                     <div>
                         <p className="text-password set-margin-left">Password</p>
-                        <input className="input-password set-margin-left" type="password" placeholder="Password" />
+                        <div className='flex flex-row justify-center items-center'>
+                            <input className="input-password " type="password" placeholder="Password" />
+                        </div>
                     </div>
                     <div className="flex flex-col justify-center items-center margin-top-button">
 
-                    <button className="button-login">Login</button>
+                        <button className="button-login">Login</button>
                     </div>
                 </div>
 
