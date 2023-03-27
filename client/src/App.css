@@ -1,42 +1,90 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.input-username {
+    width: 479px;
+    height: 47px;
+    margin-top: 10px;
+    padding-left: 10px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.input-password {
+    width: 479px;
+    height: 47px;
+    margin-top: 10px;
+    padding-left: 10px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bg-black {
+    background-color: #404040;
+    width: 100vw;
+    height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+
+.bg-white {
+    background-color: #625AD8;
+    width: 50%;
+    height: 50%;
 }
 
-.card {
-  padding: 2em;
+.border-radius-10 {
+    border-radius: 20px;
 }
 
-.read-the-docs {
-  color: #888;
+.text-hackme {
+    color: #88F4FF;
+    font-size: 28px;
+    margin-top: 30px;
+}
+
+.text-username {
+    color: white;
+    margin-top: 30px;
+}
+
+.text-password {
+    color: white;
+    margin-top: 15px;
+}
+
+.set-margin-left {
+    margin-left: 230px;
+}
+
+.button-login {
+    width: 80px;
+    height: 45px;
+    border-width: 0px;
+    background: #1F9CE4;
+    border-radius: 8px;
+
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.margin-top-button{
+    margin-top: 35px;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.items-center {
+    align-items: center;
 }
