@@ -1,0 +1,71 @@
+.input-firstname {
+    width: 479px;
+    height: 47px;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.input-lastname {
+    width: 479px;
+    height: 47px;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.input-email {
+    width: 479px;
+    height: 47px;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.text-register {
+    color: #00ff00;
+    font-size: 40px;
+    margin-top: 50px;
+}
+
+.text-firstname {
+    color: white;
+    margin-top: 10px;
+}
+
+.text-firstname {
+    color: white;
+    margin-top: 15px;
+}
+
+.text-lastname {
+    color: white;
+    margin-top: 15px;
+}
+
+.text-email {
+    color: white;
+    margin-top: 15px;
+}
+
+.bg-background {
+    background-color: #202020;
+    width: 40%;
+    height: 90%;
+}
+
+.bg-black {
+    background-color: #000000;
+}
+
+.set-margin-left {
+    margin-left: 100px;
+}
+
+.button-register {
+    width: 120px;
+    height: 45px;
+    border-width: 0px;
+    background: #4CA123;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
