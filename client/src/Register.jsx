@@ -5,11 +5,11 @@ import axios from 'axios';
 const registerURL = "http://localhost:5000/register";
 
 export default function Register() {
-    [username, setUsername] = useState("");
-    [password, setPassword] = useState("");
-    [firstName, setFirstName] = useState("");
-    [lastName, setLastName] = useState("");
-    [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
 
 
     const register = () => {
