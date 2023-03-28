@@ -30,15 +30,15 @@ export default function Login() {
             <div className="bg-black flex flex-row justify-center items-center">
                 <div className="bg-white border-radius-10 ">
                     <div className='flex flex-col justify-center items-center'>
-                        <p className="text-hackme">Hack me please !!!</p>
+                        <p className="text-hackme font">Hack me please !!!</p>
                     </div>
-                    <div>
-                        <p className="text-username set-margin-left">Username</p>
-                        <input className="input-username set-margin-left" type="text" placeholder="username" onChange={(event) => { setUsername(event.target.value) }}/>
+                    <div className='flex flex-col justify-center items-left'>
+                        <p className="text-username ">Username</p>
+                        <input className="input-username" type="text" placeholder="username" onChange={(event) => { setUsername(event.target.value) }}/>
                     </div>
-                    <div>
-                        <p className="text-password set-margin-left">Password</p>
-                        <input className="input-password set-margin-left" type="password" placeholder="Password" onChange={(event) => { setPassword(event.target.value) }}/>
+                    <div className='flex flex-col justify-center items-left'>
+                        <p className="text-password ">Password</p>
+                        <input className="input-password " type="password" placeholder="Password" onChange={(event) => { setPassword(event.target.value) }}/>
                     </div>
                     <div className="flex flex-col justify-center items-center margin-top-button">
 
