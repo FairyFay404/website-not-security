@@ -60,6 +60,18 @@
     cursor: pointer;
 }
 
+.button-signin {
+    width: 80px;
+    height: 45px;
+    border-width: 0px;
+    background: #1390c2;
+    border-radius: 8px;
+
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
 .margin-top-button{
     margin-top: 35px;
 }
@@ -94,6 +106,10 @@
 
 .grid-cols-4{
     grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.gap-10px{
+    gap: 10px;
 }
 
 .gap-40px{

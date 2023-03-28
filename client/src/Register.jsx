@@ -1,9 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./register.css"
+import axios from 'axios';
 
 const registerURL = "http://localhost:5000/register";
 
 export default function Register() {
+    [username, setUsername] = useState("");
+    [password, setPassword] = useState("");
+    [firstName, setFirstName] = useState("");
+    [lastName, setLastName] = useState("");
+    [email, setEmail] = useState("");
+
+
+    const register = () => {
+        axios.post(registerURL, {
+            username: username,
+            password: password,
+            firstName : firstName,
+            lastName : lastName,
+            email : email
+        })
+            .then(function (res) {
+                if (res.data.status == "success") {
+                    alert(res.data.message);
+                }
+                else {
+                    alert(res.data.message);
+                }
+            });
+    }
+    
+
     return (
         <>
             <div className="bg-black flex flex-row justify-center items-center">
@@ -33,7 +60,7 @@ export default function Register() {
                     </div>
                     <div className="flex flex-col justify-center items-center margin-top-button">
 
-                    <button className="button-register" onClick={Register}>Register</button>
+                    <button className="button-register" onClick={register}>Register</button>
                     </div>
                 </div>
             </div>
