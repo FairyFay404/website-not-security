@@ -30,25 +30,25 @@ export default function Content() {
             console.log(error)
           });
 
-        if(!token){
-            navigate("/"); //go to login page
-        }
+        // if(!token){
+        //     navigate("/"); //go to login page
+        // }
 
     }, []);
 
     return (
         <>
-            <div className='of-hidden'>
+            <div className='of-hidden bg-gray'>
                 <div className='cover bg-top bg-cover bg-no-repeat' style={{ backgroundImage: "url(/cover.jpg)" }} ></div>
                 <section className='suggestion'>
                     <div className="max-width-1440 mx-auto">
-                        <p className='topic'>Tourist Place</p>
+                        <p className='topic font'>Tourist Place</p>
                         <p className='describe'>Recommended the place for tourist</p>
                     </div>
                 </section>
                 <section className='bg-gray mt-5px'>
                     <div className='flex flex-row justify-center items-center pt-70px'>
-                        <div className='grid grid-cols-4 justify-center items-center gap-20px mt-70px'>
+                        <div className='bg-gray grid grid-cols-4 justify-center items-center gap-20px mt-70px'>
                             <Card image="https://images.unsplash.com/photo-1520962922320-2038eebab146?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bmF0dXJhbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"/>
                             <Card image="https://images.unsplash.com/photo-1500828131278-8de6878641b8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG5hdHVyYWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"/>
                             <Card image="https://images.unsplash.com/photo-1449673029231-c71b7b47cf5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fG5hdHVyYWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"/>
