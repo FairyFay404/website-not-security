@@ -1,8 +1,37 @@
-import React from 'react'
+import React, { useEffect }from 'react'
 import './content.css'
 import Card from './Components/Card'
+import { useNavigate } from "react-router-dom";
+import axios from 'axios';
+
+const authenURL = "http://localhost:5000/authen";
 
 export default function Content() {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+
+        const token = localStorage.getItem("token-access");
+        axios.post(authenURL, {},{
+            headers: {
+                'Authorization': 'Bearer '+token
+            },
+          })
+          .then((res) => {
+            if(res.data.status == "success"){
+                alert("authen success")
+            }
+            else{
+                localStorage.removeItem("token-access");
+                navigate("/"); //go to login page
+            }
+          })
+          .catch((error) => {
+            console.log(error)
+          });
+
+    }, []);
+
     return (
         <>
             <div >

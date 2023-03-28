@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const mysql = require('mysql2');
+var jwt = require('jsonwebtoken');
+const strToken = "WEb-is-not-seCurE000";
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
@@ -50,8 +52,9 @@ app.post('/login', jsonParser, function (req, res) {
             
             bcrypt.compare(req.body.password, results[0].password, function(err, isLogin) {
                 if(isLogin)
-                {
-                    res.json({status: "success", message: "Log-in Successful!!", username: results[0].username});
+                {   
+                    const token = jwt.sign({ username: req.body.username }, strToken, { expiresIn: '1h' }); // gen token for 1 hours
+                    res.json({status: "success", message: "Log-in Successful!!", token: token});
                 }
                 else 
                 {
@@ -84,6 +87,17 @@ app.post('/register', jsonParser, function (req, res) {
         );
     });
 
+});
+
+app.post('/authen', jsonParser, function(req ,res) {
+    var token = req.headers.authorization.split(" ")[1];
+    try {
+        var decoded = jwt.verify(token, strToken);
+        res.json({status: "success", decoded: decoded});
+    }
+    catch(err) {
+        res.json({status: "fail", message: err.message});
+    }
 });
 
 

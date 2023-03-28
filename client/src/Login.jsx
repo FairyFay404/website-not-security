@@ -17,10 +17,13 @@ export default function Login() {
         })
             .then(function (res) {
                 if (res.data.status == "success") {
-                    alert(res.data.message);
+                    alert(res.data.message)
+                    localStorage.setItem("token-access", res.data.token);
+                    navigate("/content");
                 }
                 else {
                     alert(res.data.message);
+                    navigate("/")
                 }
             });
     }
