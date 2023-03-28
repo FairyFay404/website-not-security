@@ -20,7 +20,7 @@
 }
 
 .text-register {
-    color: #00ff00;
+    color: #4cbb17;
     font-size: 40px;
     margin-top: 50px;
 }
@@ -46,9 +46,8 @@
 }
 
 .bg-background {
-    background-color: #202020;
-    width: 40%;
-    height: 90%;
+    background-color: #1e1e1e;
+    padding: 0px 80px 50px 80px;
 }
 
 .bg-black {
@@ -63,9 +62,14 @@
     width: 120px;
     height: 45px;
     border-width: 0px;
-    background: #4CA123;
+    background: #4cbb17;
     border-radius: 8px;
     color: white;
     font-size: 20px;
     cursor: pointer;
+}
+
+.font{
+    font-family: Copperplate;
+    font-size: 40px;
 }
