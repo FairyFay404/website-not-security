@@ -30,6 +30,10 @@ export default function Content() {
             console.log(error)
           });
 
+        if(!token){
+            navigate("/"); //go to login page
+        }
+
     }, []);
 
     return (
