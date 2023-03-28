@@ -1,31 +1,4 @@
-.box{
-    width: 244px;
-    height: 359px;
-    background-color: white;
-    border-radius: 10px;
-}
-
 .picture {
     width: 244px;
     height: 172.05px;
 }
-
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
