@@ -16,8 +16,8 @@ export default function Register() {
         axios.post(registerURL, {
             username: username,
             password: password,
-            firstName : firstName,
-            lastName : lastName,
+            fName : firstName,
+            lName : lastName,
             email : email
         })
             .then(function (res) {
