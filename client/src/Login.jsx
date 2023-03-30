@@ -46,7 +46,7 @@ export default function Login() {
                     </div>
                     <div className='flex flex-col justify-center items-left'>
                         <p className="text-password ">Password</p>
-                        <input className="input-password " type="password" placeholder="Password" onChange={(event) => { setPassword(event.target.value) }} />
+                        <input className="input-password" type="password" placeholder="Password" onChange={(event) => { setPassword(event.target.value) }} />
                     </div>
                     <div className="flex flex-row justify-center items-center margin-top-button gap-10px">
 
