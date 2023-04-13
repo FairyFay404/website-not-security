@@ -1,5 +1,12 @@
 # Evaluation
 
+## Intentional Vulnerability
+
+- Error message
+- SQL Injection
+
+## Unintentional Vulnerability
+
 The application is developed to demonstrate SQL injection vulnerability.
 However, other unintentional vulnerabilities can be found.
 
