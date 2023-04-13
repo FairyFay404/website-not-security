@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import "./register.css"
 import axios from 'axios';
-
-const fs = require('fs');
-const raw = fs.readFileSync("../config.json");
-const config = JSON.parse(raw);
+import { useNavigate } from "react-router-dom";
+import config from "../config.json";
 
 const registerURL = `${config["backendURL"]}register`;
 
@@ -15,6 +13,7 @@ export default function Register() {
 	const [lastName, setLastName] = useState("");
 	const [email, setEmail] = useState("");
 
+	const navigate = useNavigate();
 
 	const register = () => {
 		axios.post(registerURL, {
@@ -23,17 +22,16 @@ export default function Register() {
 			fName : firstName,
 			lName : lastName,
 			email : email
-		})
-			.then(function (res) {
-				if (res.data.status == "success") {
-					alert(res.data.message);
-				}
-				else {
-					alert(res.data.message);
-				}
-			});
+		}).then(function (res) {
+			if (res.data.status == "success") {
+				alert(res.data.message);
+				navigate("/");
+			}
+			else {
+				alert(res.data.message);
+			}
+		});
 	}
-	
 
 	return (
 		<div className="bg-black flex flex-row justify-center items-center">

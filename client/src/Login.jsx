@@ -2,12 +2,11 @@ import React from 'react'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
-
-const fs = require('fs');
-const raw = fs.readFileSync("../config.json");
-const config = JSON.parse(raw);
+import config from "../config.json";
 
 const loginURL = `${config["backendURL"]}login`;
+
+localStorage.removeItem("token-access");
 
 export default function Login() {
 	const [username, setUsername] = useState("");
@@ -18,20 +17,18 @@ export default function Login() {
 		axios.post(loginURL, {
 			username: username,
 			password: password
-		})
-			.then(function (res) {
-				if (res.data.status == "success") {
-					alert(res.data.message)
-					localStorage.setItem("token-access", res.data.token);
-					navigate("/content");
-				}
-				else {
-					alert(res.data.message);
-					navigate("/")
-				}
-			});
+		}).then(function (res) {
+			if (res.data.status == "success") {
+				alert(res.data.message);
+				localStorage.setItem("token-access", res.data.token);
+				navigate("/content");
+			} else {
+				alert(res.data.message);
+				navigate("/");
+			}
+		});
 	}
-
+	
 	const signin = () => {
 		navigate("/register")
 	}
