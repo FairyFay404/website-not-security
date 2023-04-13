@@ -25,7 +25,7 @@ const db = mysql.createConnection({
 	password: config['password']
 });
 
-app.post('/login', jsonParser, function (req, res) {
+app.post('/api/login', jsonParser, function (req, res) {
 	try{
 		const hashedPassword = crypto.createHash("sha3-256").update(req.body.password).digest("hex");
 		const query = `SELECT COUNT(*) as count FROM users WHERE username='${req.body.username}' AND password='${hashedPassword}'`
@@ -53,7 +53,7 @@ app.post('/login', jsonParser, function (req, res) {
 	}
 })
 
-app.post('/register', jsonParser, function (req, res) {
+app.post('/api/register', jsonParser, function (req, res) {
 	try{
 		const hashedPassword = crypto.createHash("sha3-256").update(req.body.password).digest("hex");
 		db.query(
@@ -72,7 +72,7 @@ app.post('/register', jsonParser, function (req, res) {
 	}
 });
 
-app.post('/authen', jsonParser, function(req ,res) {
+app.post('/api/authen', jsonParser, function(req ,res) {
 	var token = req.headers.authorization.split(" ")[1];
 	console.log(token);
 	try {
