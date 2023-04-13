@@ -1,0 +1,7 @@
+server/package-log.json
+server/node_modules
+server/config.json
+
+client/package-log.json
+client/node_modules
+client/config.json

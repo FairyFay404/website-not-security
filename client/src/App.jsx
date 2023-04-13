@@ -6,21 +6,16 @@ import Login from './Login';
 import Register from './Register';
 
 function App() {
-    const [count, setCount] = useState(0)
-
-
-    return (
-        <>
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
-                    <Route path="/content" element={<Content/>} />
-                </Routes>
-            </BrowserRouter>
-
-        </>
-    )
+	const [count, setCount] = useState(0)
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<Login />} />
+				<Route path="/register" element={<Register />} />
+				<Route path="/content" element={<Content/>} />
+			</Routes>
+		</BrowserRouter>
+	)
 }
 
 export default App
