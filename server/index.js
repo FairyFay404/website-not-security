@@ -54,6 +54,7 @@ app.post('/api/login', jsonParser, function (req, res) {
 })
 
 app.post('/api/register', jsonParser, function (req, res) {
+	return;
 	try{
 		const hashedPassword = crypto.createHash("sha3-256").update(req.body.password).digest("hex");
 		db.query(

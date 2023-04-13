@@ -28,7 +28,7 @@ export default function Login() {
 			}
 		});
 	}
-	
+
 	const signin = () => {
 		navigate("/register")
 	}
@@ -51,7 +51,7 @@ export default function Login() {
 				<div className="flex flex-row justify-center items-center margin-top-button gap-10px">
 
 					<button className="button-login" onClick={login}>Login</button>
-					<button className="button-signin" onClick={signin}>Sign in</button>
+					{/* <button className="button-signin" onClick={signin}>Sign in</button> */}
 				</div>
 			</div>
 
