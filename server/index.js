@@ -19,7 +19,8 @@ const jsonParser = bodyParser.json()
 const db = mysql.createConnection({
     host: 'localhost', // localhost
     user: 'root',
-    database: 'test' // name of database
+    database: 'test', // name of database
+    password: 'Cyber101#Injection'
 });
 
 
