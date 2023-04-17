@@ -38,20 +38,22 @@ app.post('/api/login', jsonParser, function (req, res) {
 			function(err, results){
 				if(err){
 					res.json({status: "fail", message: err.message});
+					db.close();
 					return;
 				}
 				if(results != undefined || results.length > 0){
 					if(results[0]['count'] > 0){
 						const token = jwt.sign({ username: req.body.username }, strToken, { expiresIn: '1h' }); // gen token for 1 hours
 						res.json({status: "success", message: "Log-in Successful!!", token: token});
+						db.close();
 						return;
 					}
 				}
+				db.close();
 				res.json({status: "fail", message: "No User in System!!"});
 				return;
 			}
 		);
-		db.close();
 	}catch(error){
 		res.json({status: "fail", message: error.message});
 	}
