@@ -18,15 +18,18 @@ const jsonParser = bodyParser.json()
 const raw = fs.readFileSync("config.json");
 const config = JSON.parse(raw);
 
-const db = mysql.createConnection({
-	host: config['host'],
-	user: config['user'],
-	database: config['database'],
-	password: config['password']
-});
+function connectDB(){
+	return mysql.createConnection({
+		host: config['host'],
+		user: config['user'],
+		database: config['database'],
+		password: config['password']
+	});
+}
 
 app.post('/api/login', jsonParser, function (req, res) {
 	try{
+		const db = connectDB();
 		const hashedPassword = crypto.createHash("sha3-256").update(req.body.password).digest("hex");
 		const query = `SELECT COUNT(*) as count FROM users WHERE username='${req.body.username}' AND password='${hashedPassword}'`
 		db.query(
@@ -89,4 +92,7 @@ app.post('/api/authen', jsonParser, function(req ,res) {
 
 app.listen(5000, function () {
 	console.log('CORS-enabled web server listening on port 5000');
-})
+});
+app.use(function(err, req, res, next) {
+	res.status(err.status || 500).json(response.error(err.status || 500));
+});
