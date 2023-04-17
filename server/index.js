@@ -51,6 +51,7 @@ app.post('/api/login', jsonParser, function (req, res) {
 				return;
 			}
 		);
+		db.close();
 	}catch(error){
 		res.json({status: "fail", message: error.message});
 	}
